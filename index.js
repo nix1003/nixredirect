@@ -6,10 +6,10 @@ const manifest = {
   name: "NixRedirect",
   description: "Redirects to live sports",
   resources: ["catalog", "meta", "stream"],
-  types: ["tv"], // 🛠 custom type instead of "tv"
+  types: ["tv"], // valid type
   catalogs: [
     {
-      type: "NixRedirect", // match this type
+      type: "tv", // ✅ fixed
       id: "sports_live",
       name: "Live Sports"
     }
@@ -24,7 +24,7 @@ builder.defineCatalogHandler(() => {
     metas: [
       {
         id: "sports_ufc",
-        type: "NixRedirect", // 👈 match custom type
+        type: "tv", // ✅ fixed
         name: "Nix Redirect V1.0",
         poster: "https://raw.githubusercontent.com/nix1003/stremioaddons/main/nixredirectbackdrop.png",
         posterShape: "landscape",
@@ -41,7 +41,7 @@ builder.defineMetaHandler(({ id }) => {
   return Promise.resolve({
     meta: {
       id,
-      type: "NixRedirect", // 👈 match custom type
+      type: "tv", // ✅ fixed
       name: titles[id] || "Sports Event",
       poster: "https://raw.githubusercontent.com/nix1003/stremioaddons/main/nixredirectbackdrop.png",
       posterShape: "landscape",
