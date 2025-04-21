@@ -6,7 +6,7 @@ const manifest = {
   name: "NixRedirect",
   description: "Redirects to live sports",
   resources: ["catalog", "meta", "stream"],
-  types: ["NixRedirect"], // 🛠 custom type instead of "tv"
+  types: ["tv"], // 🛠 custom type instead of "tv"
   catalogs: [
     {
       type: "NixRedirect", // match this type
